@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const parse = require('csv-parser');
-const csrf = require("csurf");
 const fs = require('fs');
+const csrf = require("csurf");
 const routes = require("./routes");
 
 //initiliaze express
@@ -21,22 +21,22 @@ app.use(csrf({ cookie: true }));
 
 app.use(routes);
 
-let csv_data = {};
+// let csv_data = {};
 
-fs.createReadStream("./logindata.csv")
-  .pipe(parse())
-  .on('data', (csvrow) => {
-    try {
-      csv_data[csvrow.Id] = csvrow;
-    }
-    catch (error) {
-      console.log(error)
-    }
-  })
-  .on('end', function () {
-    console.log('this is csv data', csv_data)
-    console.log('CSV file successfully processed');
-  });
+// fs.createReadStream("./logindata.csv")
+//   .pipe(parse())
+//   .on('data', (csvrow) => {
+//     try {
+//       csv_data[csvrow.Id] = csvrow;
+//     }
+//     catch (error) {
+//       console.log(error)
+//     }
+//   })
+//   .on('end', function () {
+//     console.log('this is csv data', csv_data)
+//     console.log('CSV file successfully processed');
+//   });
 
 const port = 5000;
 
