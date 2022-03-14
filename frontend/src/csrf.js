@@ -1,4 +1,3 @@
-// frontend/src/store/csrf.js
 import Cookies from "js-cookie";
 
 export  async function csrfFetch(url, options = {}) {
@@ -18,7 +17,11 @@ export  async function csrfFetch(url, options = {}) {
   const res = await window.fetch(url, options);
 
   // if res code is 400 or above then throw an error with error as response
-  if (res.status >= 400) throw res;
+  console.log('CSRF RES before', res)
+  if (res.status >= 400) {
+    console.log('this is response error csrf', res)
+    throw res
+  };
 
   // if the response status code is under 400, then return the response to the
   // next promise chain
