@@ -47,7 +47,16 @@ router.post("/", asyncHandler(async (req, res, next) => {
     return next(err)
   }
   if (csv_data[username].Password === password) {
-  res.sendFile(path.join(__dirname, "../../public/test.html"))
+    res.sendFile(path.join(__dirname, "../../public/test.html"))
+    
+  } else {
+    const err = new Error("PASSWORD INCORRECT");
+    err.status = 401;
+    err.title = "PASSWORD INCORRECT:";
+    err.errors = ['The credentials do not match our records. Please verify credentials.'];
+    console.log(err.title, err.errors[0])
+    return next(err)
+
 }
   console.log(csv_data[username].Password === password);
   // console.log(csv_data[username].Password);
