@@ -1,4 +1,4 @@
-# Xcentium Login Challenge
+# XCentium Login Challenge
 
 * Given CSV data, successfully parse and login using credentials on file.
 * Responsive design for login and homepage.
