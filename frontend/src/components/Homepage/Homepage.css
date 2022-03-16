@@ -5,7 +5,6 @@ body {
 .homepage-container {
     display: flex;
     flex-direction: column;
-
 }
 
 .navbar {
@@ -26,17 +25,16 @@ body {
 }
 
 .logout-button {
-    margin-right: 7rem;
+    position: relative;
+    right: 5rem;
     background-color: transparent;
     color: rgb(246, 238, 114);
     border: 1px solid rgb(246, 238, 114);
-    /* width: 35%; */
     border-radius: 2px;
     padding: 5px 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-
 }
 
 .logout-button:hover {
@@ -47,6 +45,6 @@ body {
 .greeting {
     color: rgb(246, 238, 114);
     font-size: 40px;
-    margin-left: 7rem;
-
+    position: relative;
+    left: 5rem;
 }

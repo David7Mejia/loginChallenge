@@ -8,13 +8,14 @@ body {
 .login-form {
     display: flex;
     flex-direction: column;
-    height: 70%;
+    height: 65%;
     justify-content: space-between;
     align-items: stretch;
     margin-left: 5px;
 }
 
 .form-container {
+    width: 100vw;
     display: flex;
     background-color: #143343;
 }
@@ -22,12 +23,11 @@ body {
 .background-image {
     background-color: red;
     background-image: url('../../../public/19.jpg');
-    /* background-size: cover; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-    width: 60vw;
+    width: 100%;
 }
 
 .title {
@@ -40,8 +40,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-
+    width: calc(min(50rem));
+    z-index: 1;
 }
 
 .login-button {
@@ -72,11 +72,16 @@ body {
     border: none;
     border-bottom: 1px solid white;
     height: 50px;
-    /* width: 100% */
     font-size: 20px;
     color: white;
 }
 
 .username:focus, .password:focus{
     outline: none;
+}
+
+.login-error{
+    height: 30px;
+    font-weight: 600;
+    color: red;
 }

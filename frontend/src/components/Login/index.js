@@ -51,13 +51,7 @@ const Login = () => {
             <br />
             Let's Get Cookin'
           </p>
-          {/* {error && (
-        <p className="error">
-          {error.forEach((er) => {
-            <p>{er}</p>;
-          })}
-        </p>
-      )} */}
+
           <label className="username-holder">
             <input
               value={username}
@@ -76,9 +70,11 @@ const Login = () => {
               type="password"
               placeholder="Password"
               required
-            >
-              </input>
+            ></input>
           </label>
+          <div className="login-error">
+            {error && <p className="error">{error}</p>}
+          </div>
           <button
             className="login-button"
             type="submit"
@@ -86,6 +82,7 @@ const Login = () => {
           >
             Log In
           </button>
+
         </form>
       </div>
       <div className="background-image"></div>
