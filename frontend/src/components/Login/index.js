@@ -43,45 +43,53 @@ const Login = () => {
 
 }, [setUser, username, res, user])
   return (
-    <form
-      className="login-form"
-    >
-      Welcome Back!
-      {/* {error && (
+    <div className="form-container">
+      <div className="form-holder">
+        <form className="login-form">
+          <p className="title">
+            Welcome Back!
+            <br />
+            Let's Get Cookin'
+          </p>
+          {/* {error && (
         <p className="error">
           {error.forEach((er) => {
             <p>{er}</p>;
           })}
         </p>
       )} */}
-      <label>
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="username"
-          type="text"
-          placeholder="Username"
-          required
-        />
-      </label>
-      <label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="password"
-          type="password"
-          placeholder="Password"
-          required
-        />
-      </label>
-      <button
-        className="login-button"
-        type="submit"
-        onClick={(e)=>handleSubmit(e)}
-      >
-        Log In
-      </button>
-    </form>
+          <label className="username-holder">
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="username"
+              type="text"
+              placeholder="Username"
+              required
+            />
+          </label>
+          <label className="password-holder">
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="password"
+              type="password"
+              placeholder="Password"
+              required
+            >
+              </input>
+          </label>
+          <button
+            className="login-button"
+            type="submit"
+            onClick={(e) => handleSubmit(e)}
+          >
+            Log In
+          </button>
+        </form>
+      </div>
+      <div className="background-image"></div>
+    </div>
   );
 };
 
