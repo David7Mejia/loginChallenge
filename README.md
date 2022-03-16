@@ -5,7 +5,10 @@
 * Check state if user is logged in. True: redirect to /homepage False: reroute to /.
 * Set errors if invalid credentials.
 
+## Setup Commands
 ### npm install in root directory & react root directory.
+### cd backend => nodemon app.js
+### cd frontend => npm start
 
 ## Reading the CSV data
 ### ../backend/routes/index.js
