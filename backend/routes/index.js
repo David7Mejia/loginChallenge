@@ -48,7 +48,7 @@ router.post("/", asyncHandler(async (req, res, next) => {
   }
   if (csv_data[username].Password === password) {
     res.sendFile(path.join(__dirname, "../../public/test.html"))
-    
+
   } else {
     const err = new Error("PASSWORD INCORRECT");
     err.status = 401;
@@ -59,10 +59,7 @@ router.post("/", asyncHandler(async (req, res, next) => {
 
 }
   console.log(csv_data[username].Password === password);
-  // console.log(csv_data[username].Password);
-  // console.log(password)
-
-    return res.json('fsadasadasdasdsada');
+    return res.json('success');
   })
 );
 module.exports = router;

@@ -33,11 +33,8 @@ const Login = () => {
     if (res.status >= 400) {
       setError("Invalid username or password");
       setUser(null);
-      console.log('BAD LOGIN',user)
     } else {
-
       setUser(username);
-      console.log('GOOD LOGIN',user)
     }
   }
 
