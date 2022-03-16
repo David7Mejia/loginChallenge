@@ -10,7 +10,8 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [res, setRes] =useState(null)
+  const [res, setRes] = useState(null)
+  const [name, setName] = useState("")
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,8 +24,13 @@ const Login = () => {
       },
       body: JSON.stringify({ username, password }),
     });
-    const data = await response;
+    const data = await response
+
     setRes(data)
+    if (data.status === 200) {
+      const getName = await response.json()
+      setName(getName.name)
+    }
     return data;
   }
 
@@ -34,11 +40,11 @@ const Login = () => {
       setError("Invalid username or password");
       setUser(null);
     } else {
-      setUser(username);
+      setUser(name);
     }
   }
 
-}, [setUser, username, res, user])
+}, [setUser, name, res, user])
   return (
     <div className="form-container">
       <div className="form-holder">

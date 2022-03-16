@@ -33,7 +33,6 @@ router.get("/",(req, res) =>{
     return res.json('Hello, server is up React app hosted on port 3000')
 });
 
-
 router.post("/", asyncHandler(async (req, res, next) => {
     const { username, password } = req.body;
   // console.log('this is combination', csv_data, username, password);
@@ -47,7 +46,12 @@ router.post("/", asyncHandler(async (req, res, next) => {
     return next(err)
   }
   if (csv_data[username].Password === password) {
-    res.sendFile(path.join(__dirname, "../../public/index.html"))
+    // res.sendFile(path.join(__dirname, "../../public/index.html"))
+    //return name from csv file
+    console.log("this is name", csv_data[username].Name);
+    return res.json({
+      name: csv_data[username].Name,
+    });
 
   } else {
     const err = new Error("PASSWORD INCORRECT");
