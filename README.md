@@ -1,7 +1,7 @@
 # Xcentium Login Challenge
 
-* Given CSV data, successfully parse and login using credentials on file. 
-* Responsive design for login and homepage. 
+* Given CSV data, successfully parse and login using credentials on file.
+* Responsive design for login and homepage.
 * Check state if user is logged in. True: redirect to /homepage False: reroute to /.
 * Set errors if invalid credentials.
 
@@ -34,12 +34,12 @@ fs.createReadStream("./logindata.csv")
     console.log("CSV file successfully processed");
   });
   ```
-  
-  ## Fetch API between React and Node.js 
+
+  ## Fetch API between React and Node.js
   ### ../frontend/src/components/Login/index.js
-  
+
   ```js
-  async function handleSubmit(e) {
+ async function handleSubmit(e) {
     e.preventDefault();
 
     const response = await fetch("/", {
@@ -50,8 +50,13 @@ fs.createReadStream("./logindata.csv")
       },
       body: JSON.stringify({ username, password }),
     });
-    const data = await response;
+    const data = await response
+
     setRes(data)
+    if (data.status === 200) {
+      const getName = await response.json()
+      setName(getName.name)
+    }
     return data;
   }
 
@@ -61,7 +66,7 @@ fs.createReadStream("./logindata.csv")
       setError("Invalid username or password");
       setUser(null);
     } else {
-      setUser(username);
+      setUser(name);
     }
   }
   ```
