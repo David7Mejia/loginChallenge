@@ -21,23 +21,6 @@ app.use(csrf({ cookie: true }));
 
 app.use(routes);
 
-// let csv_data = {};
-
-// fs.createReadStream("./logindata.csv")
-//   .pipe(parse())
-//   .on('data', (csvrow) => {
-//     try {
-//       csv_data[csvrow.Id] = csvrow;
-//     }
-//     catch (error) {
-//       console.log(error)
-//     }
-//   })
-//   .on('end', function () {
-//     console.log('this is csv data', csv_data)
-//     console.log('CSV file successfully processed');
-//   });
-
 const port = 5000;
 
 app.listen(port, () => {
