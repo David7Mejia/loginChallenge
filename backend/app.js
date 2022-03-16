@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const parse = require('csv-parser');
-const fs = require('fs');
 const csrf = require("csurf");
 const routes = require("./routes");
 
